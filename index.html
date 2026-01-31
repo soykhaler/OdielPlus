@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Odiel+</title>
+
+<style>
+body {
+    margin: 0;
+    background: #0b0b0b;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #111;
+    padding: 16px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #e50914;
+    letter-spacing: 1px;
+}
+
+header span {
+    font-size: 12px;
+    color: #aaa;
+    display: block;
+    font-weight: normal;
+}
+
+section {
+    padding: 16px;
+}
+
+h2 {
+    margin: 18px 0 12px;
+    font-size: 18px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 6px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+/* CARTAS GENERALES */
+.card {
+    background: #1a1a1a;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.1s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card:hover {
+    background: #e50914;
+    transform: scale(1.03);
+}
+
+/* CARTEL (películas, videojuegos, música) */
+.card.poster {
+    padding: 0;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.card.poster img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    background: #222;
+}
+
+.card.poster .title {
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    background: #1a1a1a;
+}
+
+/* PLAYER */
+#player {
+    display: none;
+    padding: 16px;
+}
+
+iframe {
+    width: 100%;
+    height: 70vh;
+    border: none;
+    background: black;
+}
+
+button {
+    background: #e50914;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    ODIEL+
+    <span>archivo audiovisual local</span>
+</header>
+
+<section id="home">
+
+    <!-- ================= PELÍCULAS ================= -->
+    <h2>Películas</h2>
+    <div class="grid">
+
+        <div class="card poster" onclick="playYT('vFmwznKY8sc','La Deuda')">
+            <img src="https://img.itch.zone/aW1nLzIwMjY5NDI5LnBuZw==/original/E4H5rX.png" alt="La Deuda">
+            <div class="title">La Deuda</div>
+        </div>
+
+        <div class="card poster" onclick="playYT('kPDUv2xjkKs','El observador')">
+            <img src="https://cdn.myportfolio.com/dd1fa4cb-e8ee-4ce7-9211-0c4b5a56039a/87b1c467-2b90-4c3b-9558-0a34dbd47cad_rw_1200.jpg?h=811f6ded48e79c1d6721e310ebb349fe" alt="El observador">
+            <div class="title">El observador</div>
+        </div>
+
+    </div>
+
+    <!-- ================= VIDEOJUEGOS ================= -->
+    <h2>Videojuegos</h2>
+    <div class="grid">
+
+        <div class="card poster" onclick="window.open('https://store.steampowered.com/app/2469260/Parkour_Labs/','_blank')">
+            <img src="https://img.itch.zone/aW1nLzE2OTQyNDk3LnBuZw==/original/%2FR6krD.png" alt="Parkour Labs">
+            <div class="title">Parkour Labs</div>
+        </div>
+
+        <div class="card poster" onclick="window.open('https://store.steampowered.com/app/768880/Beach_Rules/?l=spanish','_blank')">
+            <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/768880/header.jpg?t=1515089684" alt="Beach Rules">
+            <div class="title">Beach Rules</div>
+        </div>
+
+        <div class="card poster" onclick="window.open('https://roolandoo.itch.io/exotical','_blank')">
+            <img src="https://img.itch.zone/aW1hZ2UvMjI1NzU1Ny8xMzM5NDcxOC5wbmc=/original/smYqlh.png" alt="Exo-tical">
+            <div class="title">Exo-tical</div>
+        </div>
+
+        <div class="card poster" onclick="window.open('https://store.steampowered.com/app/2769240/Wax_Heads/','_blank')">
+            <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2769240/header.jpg?t=1752570959" alt="Wax Heads">
+            <div class="title">Wax Heads</div>
+        </div>
+
+        <div class="card poster" onclick="window.open('https://play.google.com/store/apps/details?id=com.MechanicGames.CreateYourOwnMonster&hl=es','_blank')">
+            <img src="https://static.grupojoly.com/clip/b52c0138-4ce2-4dbe-b03d-7b211094a214_facebook-aspect-ratio_default_0.jpg" alt="Crea tu propio monstruo">
+            <div class="title">Crea tu propio monstruo</div>
+        </div>
+
+    </div>
+
+    <!-- ================= MÚSICA ================= -->
+    <h2>Música</h2>
+    <div class="grid">
+
+        <div class="card poster" onclick="window.open('https://open.spotify.com/artist/2EUv94GOuerYwn3vNgZPK6','_blank')">
+            <img src="https://f4.bcbits.com/img/a0174773732_10.jpg" alt="NADA">
+            <div class="title">NADA</div>
+        </div>
+
+        <div class="card poster" onclick="window.open('https://open.spotify.com/album/67gD8vuNzFfX7PWLzozD7Z','_blank')">
+            <img src="https://i.scdn.co/image/ab67616d00001e02a80fc361b830e017ac3a139b" alt="Unidos por la Música">
+            <div class="title">Unidos por la Música</div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= PLAYER ================= -->
+<section id="player">
+    <button onclick="back()">← Volver</button>
+    <h2 id="movietitle"></h2>
+    <iframe id="ytplayer"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+</section>
+
+<script>
+function playYT(id, title) {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("player").style.display = "block";
+    document.getElementById("movietitle").textContent = title;
+    document.getElementById("ytplayer").src =
+        "https://www.youtube.com/embed/" + id + "?rel=0&autoplay=1";
+}
+
+function back() {
+    const p = document.getElementById("ytplayer");
+    p.src = "";
+    document.getElementById("player").style.display = "none";
+    document.getElementById("home").style.display = "block";
+}
+</script>
+
+</body>
+</html>
